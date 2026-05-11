@@ -1,0 +1,8 @@
+site_name: Trabalho Databricks Lakehouse
+
+nav:
+  - Início: index.md
+  - Arquitetura: arquitetura.md
+  - Pipeline: pipeline.md
+  - Qualidade: qualidade.md
+  - Conclusão: conclusao.md
