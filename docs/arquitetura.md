@@ -12,3 +12,4 @@ Na camada SILVER, são aplicadas regras de Data Quality, como remoção de valor
 Na camada GOLD, os dados tratados são organizados em modelo dimensional, contendo tabelas fato e dimensão conforme a abordagem de Ralph Kimball.
 
 Todo o processo é executado de forma sequencial através de Jobs & Pipelines do Databricks, garantindo automação do pipeline de dados.
+

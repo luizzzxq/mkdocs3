@@ -1,8 +1,10 @@
-site_name: Trabalho Databricks Lakehouse
+site_name: Trabalho Databricks 
 
 nav:
   - Início: index.md
-  - Arquitetura: arquitetura.md
-  - Pipeline: pipeline.md
-  - Qualidade: qualidade.md
+  - Landing Layer: landing.md
+  - Bronze Layer: bronze.md
+  - Silver Layer: silver.md
+  - Gold Layer: gold.md
+  - Automação: automacao.md
   - Conclusão: conclusao.md
