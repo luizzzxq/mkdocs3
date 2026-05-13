@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Arquitetura do Projeto - Trabalho Databricks</title>
+        <title>Automação - Trabalho Databricks</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -45,8 +45,8 @@
                             <li class="navitem">
                                 <a href="../gold/" class="nav-link">Gold Layer</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../automacao/" class="nav-link">Automação</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Automação</a>
                             </li>
                             <li class="navitem">
                                 <a href="../conclusao/" class="nav-link">Conclusão</a>
@@ -59,6 +59,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../gold/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../conclusao/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -77,8 +87,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-light">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#arquitetura-do-projeto" class="nav-link">Arquitetura do Projeto</a>
+            <li class="nav-item" data-level="1"><a href="#jobs-pipelines" class="nav-link">Jobs &amp; Pipelines</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#encadeamento-e-automacao-das-execucoes" class="nav-link">Encadeamento e Automação das Execuções</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -86,14 +100,12 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="arquitetura-do-projeto">Arquitetura do Projeto</h1>
-<p>O projeto segue a arquitetura medalhão utilizando Databricks e Delta Lake.</p>
-<p>O fluxo inicia com a extração dos dados de um banco de dados relacional ou não relacional. 
-Esses dados são armazenados no schema LANDING/DADOS nos formatos CSV (relacional) ou JSON (não relacional).</p>
-<p>Na camada BRONZE, os arquivos CSV ou JSON são lidos e convertidos para o formato Delta Lake, mantendo os dados em estado bruto para persistência e rastreabilidade.</p>
-<p>Na camada SILVER, são aplicadas regras de Data Quality, como remoção de valores nulos, tratamento de duplicidades e padronização de dados, garantindo maior confiabilidade das informações.</p>
-<p>Na camada GOLD, os dados tratados são organizados em modelo dimensional, contendo tabelas fato e dimensão conforme a abordagem de Ralph Kimball.</p>
-<p>Todo o processo é executado de forma sequencial através de Jobs &amp; Pipelines do Databricks, garantindo automação do pipeline de dados.</p></div>
+<h1 id="jobs-pipelines">Jobs &amp; Pipelines</h1>
+<h2 id="encadeamento-e-automacao-das-execucoes">Encadeamento e Automação das Execuções</h2>
+<p>Após a construção de todas as camadas da arquitetura Medalhão, foi necessário automatizar a execução completa do pipeline utilizando os recursos de Jobs &amp; Pipelines do Databricks. Cada notebook desenvolvido no projeto foi organizado em uma sequência lógica de execução, garantindo que as etapas fossem processadas na ordem correta.</p>
+<p>O fluxo automatizado inicia com a extração dos dados para a camada Landing, seguida pela ingestão para a Bronze, aplicação de regras de qualidade na Silver e, por fim, carregamento das tabelas dimensionais na Gold. Esse encadeamento garante que cada etapa utilize dados já processados e validados pela etapa anterior, reduzindo inconsistências no pipeline.</p>
+<p>A utilização de Jobs trouxe maior controle operacional ao projeto, permitindo monitorar execuções, identificar falhas e registrar logs detalhados de cada etapa. Além disso, o Databricks possibilita configurar dependências entre tarefas, criando pipelines mais organizados e próximos de ambientes produtivos utilizados em empresas.</p>
+<p>Outro benefício importante da automação foi a redução de processos manuais repetitivos. Com todas as etapas encadeadas automaticamente, o pipeline se tornou mais eficiente, padronizado e escalável. Isso permite futuras melhorias no projeto, como inclusão de novas fontes de dados, novas regras de transformação ou integração com ferramentas analíticas.</p></div>
             </div>
         </div>
 

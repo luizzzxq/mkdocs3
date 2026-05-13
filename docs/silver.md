@@ -9,3 +9,11 @@ Entre as validações aplicadas podem estar remoção de valores nulos, tratamen
 Após o processamento, os dados tratados foram gravados em um novo schema chamado SILVER. Diferente da Bronze, a camada Silver já contém dados considerados confiáveis e preparados para consumo interno dentro do ambiente analítico. Essa camada normalmente é utilizada como base para relatórios operacionais e integrações.
 
 A implementação da camada Silver também demonstra a importância do conceito de refinamento gradual presente na arquitetura Medalhão. Em vez de realizar todas as transformações de uma única vez, o pipeline organiza o fluxo em etapas menores e mais controladas, facilitando manutenção, testes e monitoramento.
+
+Já aqui, ele faz um tratamento dos dados das tabelas cliente: limpa, remove duplicatas, padroniza e trata valores faltantes.
+
+![](S.png)
+
+Os dados da tabela dos produtos também passam por um tratamento semelhante, como podemos observar:
+
+![](S2.png)

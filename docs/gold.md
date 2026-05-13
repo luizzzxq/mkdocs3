@@ -9,3 +9,9 @@ A modelagem dimensional facilita consultas analíticas e melhora o desempenho em
 Os dados modelados foram armazenados em um schema chamado GOLD. Diferente das etapas anteriores, essa camada já contém informações refinadas e estruturadas especificamente para consumo analítico. Isso significa que usuários finais, dashboards e relatórios podem acessar dados mais limpos, consistentes e organizados.
 
 A camada Gold também evidencia a importância da separação de responsabilidades dentro da arquitetura Medalhão. Enquanto Landing, Bronze e Silver possuem foco operacional e técnico, a Gold é voltada diretamente para geração de valor através da análise dos dados. Essa divisão torna o pipeline mais eficiente e alinhado às necessidades do negócio.
+
+![](G.png)
+
+Os dados da tabela de produtos também passam por um processo semelhante de limpeza e padronização, preparando as informações para as próximas etapas do pipeline.
+
+![](G2.png)

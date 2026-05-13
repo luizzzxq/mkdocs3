@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Trabalho Databricks Lakehouse</title>
+        <title>Trabalho Databricks</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <body class="homepage">
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">Trabalho Databricks Lakehouse</a>
+                <a class="navbar-brand" href=".">Trabalho Databricks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,16 +34,22 @@
                                 <a href="." class="nav-link">Início</a>
                             </li>
                             <li class="navitem">
-                                <a href="arquitetura/" class="nav-link">Arquitetura</a>
+                                <a href="landing/" class="nav-link">Landing Layer</a>
                             </li>
                             <li class="navitem">
-                                <a href="pipeline.md" class="nav-link">Pipeline</a>
+                                <a href="bronze/" class="nav-link">Bronze Layer</a>
                             </li>
                             <li class="navitem">
-                                <a href="qualidade.md" class="nav-link">Qualidade</a>
+                                <a href="silver/" class="nav-link">Silver Layer</a>
                             </li>
                             <li class="navitem">
-                                <a href="conclusao.md" class="nav-link">Conclusão</a>
+                                <a href="gold/" class="nav-link">Gold Layer</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="automacao/" class="nav-link">Automação</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="conclusao/" class="nav-link">Conclusão</a>
                             </li>
                         </ul>
 
@@ -59,7 +65,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="arquitetura/" class="nav-link">
+                                <a rel="next" href="landing/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -81,9 +87,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-light">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#inicio" class="nav-link">Início</a>
+            <li class="nav-item" data-level="1"><a href="#introducao" class="nav-link">Introdução</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#estrutura-do-projeto" class="nav-link">Estrutura do Projeto</a>
+            <li class="nav-item" data-level="2"><a href="#visao-geral-do-projeto" class="nav-link">Visão Geral do Projeto</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -94,18 +100,12 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="inicio">Início</h1>
-<p>Este projeto tem como objetivo implementar uma arquitetura Lakehouse utilizando o Databricks Free Edition e o modelo medalhão (Medallion Architecture).</p>
-<p>O pipeline realiza a extração de dados de um banco de dados relacional ou não relacional, armazenando inicialmente os arquivos na camada LANDING/DADOS nos formatos CSV ou JSON. Em seguida, os dados são convertidos para Delta Lake na camada BRONZE, permitindo maior organização e desempenho no processamento.</p>
-<p>Na camada SILVER, são aplicadas regras de qualidade de dados (Data Quality), garantindo maior consistência e confiabilidade das informações. Posteriormente, os dados tratados são estruturados na camada GOLD utilizando modelagem dimensional baseada em Ralph Kimball.</p>
-<p>Todo o fluxo é automatizado através de Jobs &amp; Pipelines do Databricks, permitindo a execução sequencial dos notebooks responsáveis por cada etapa do processo.</p>
-<h2 id="estrutura-do-projeto">Estrutura do Projeto</h2>
-<ul>
-<li>LANDING: armazenamento inicial dos arquivos CSV/JSON</li>
-<li>BRONZE: dados brutos em Delta Lake</li>
-<li>SILVER: dados tratados e validados</li>
-<li>GOLD: tabelas fato e dimensão para análise</li>
-</ul></div>
+<h1 id="introducao">Introdução</h1>
+<h2 id="visao-geral-do-projeto">Visão Geral do Projeto</h2>
+<p>Este projeto teve como objetivo desenvolver um pipeline de dados completo utilizando a arquitetura Medalhão dentro da plataforma Databricks. A solução foi construída seguindo um modelo de processamento em múltiplas camadas, permitindo separar dados brutos, dados tratados e dados analíticos de maneira organizada e escalável. O fluxo foi estruturado utilizando as camadas Landing, Bronze, Silver e Gold, além da automação com Jobs &amp; Pipelines.</p>
+<p>A arquitetura Medalhão é amplamente utilizada em projetos modernos de Engenharia de Dados por oferecer maior controle sobre o ciclo de vida das informações. Cada camada possui uma responsabilidade específica dentro do pipeline, permitindo melhor governança, rastreabilidade e qualidade dos dados. Essa divisão também facilita manutenção, monitoramento e futuras expansões do projeto.</p>
+<p>O pipeline foi implementado no Databricks utilizando Delta Lake como tecnologia principal de armazenamento. A utilização do Delta Lake trouxe vantagens importantes, como suporte a transações ACID, versionamento de dados e melhor desempenho em operações analíticas. Além disso, o ambiente Databricks permitiu integrar notebooks, automações e processamento distribuído em uma única plataforma.</p>
+<p>Durante o desenvolvimento, foram aplicados conceitos de ingestão de dados, transformação, Data Quality, modelagem dimensional e automação de workflows. O projeto buscou reproduzir um cenário próximo de ambientes corporativos reais, demonstrando como pipelines modernos podem transformar dados brutos em informações organizadas e preparadas para análise estratégica.</p></div>
             </div>
         </div>
 
@@ -188,5 +188,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2026-05-11 20:19:47.358095+00:00
+Build Date UTC : 2026-05-12 01:54:06.644153+00:00
 -->

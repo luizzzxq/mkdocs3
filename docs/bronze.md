@@ -9,3 +9,11 @@ O Delta Lake oferece diversas vantagens em relação aos formatos tradicionais d
 Durante essa etapa, os dados foram organizados em um novo schema chamado BRONZE. Embora os dados ainda sejam considerados brutos, agora eles estão armazenados em um formato otimizado para processamento distribuído dentro do Databricks. Essa camada também serve como base para futuras transformações e validações.
 
 A camada Bronze possui um papel fundamental na arquitetura Medalhão, pois representa a transição entre os dados originais e o ambiente de processamento analítico. Ela permite que os dados sejam armazenados de forma eficiente e preparados para os tratamentos aplicados posteriormente na camada Silver.
+
+Logo abaixo, estará o Schema da camada Bronze, onde ele está puxando os dados da camada anterior, ou seja, a Landing.
+
+![](B.png)
+
+Com os produtos, acontece a mesma coisa que os clientes: o Bronze puxa os dados do Landing.
+
+![](B2.png)
