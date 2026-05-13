@@ -105,7 +105,11 @@
 <p>A camada Landing representa o primeiro estágio do pipeline de dados. Nessa etapa, os dados foram extraídos de um banco de dados relacional ou não relacional, dependendo da escolha realizada para o projeto. O objetivo principal dessa camada é armazenar os dados em seu formato original, preservando todas as informações vindas da origem sem qualquer transformação inicial.</p>
 <p>Para bancos relacionais, os dados foram exportados no formato CSV, enquanto bancos não relacionais utilizaram o formato JSON. Essa separação foi importante para manter compatibilidade com diferentes tipos de estruturas de dados. Os arquivos gerados foram armazenados em um schema específico dentro do Databricks chamado LANDING/DADOS.</p>
 <p>A camada Landing funciona como uma zona de aterrissagem dos dados, servindo como ponto inicial para todas as etapas seguintes do pipeline. Manter os dados brutos disponíveis permite realizar auditorias, reprocessamentos e validações futuras sem necessidade de acessar novamente a fonte original. Isso também contribui para maior segurança e rastreabilidade.</p>
-<p>Outro ponto importante dessa etapa foi garantir que a extração contemplasse todas as tabelas do banco escolhido. Dessa forma, o pipeline consegue representar de maneira mais completa os dados disponíveis, preparando o ambiente para as etapas de ingestão e transformação realizadas posteriormente.</p></div>
+<p>Outro ponto importante dessa etapa foi garantir que a extração contemplasse todas as tabelas do banco escolhido. Dessa forma, o pipeline consegue representar de maneira mais completa os dados disponíveis, preparando o ambiente para as etapas de ingestão e transformação realizadas posteriormente.</p>
+<p>Logo abaixo, estará o Schema juntamente com alguns dados de exemplo (ao todo, são 40 dados), onde está o Id, nome, email, a cidade e por fim, seu estado.</p>
+<p><img alt="" src="../L.png" /></p>
+<p>Já aqui, temos a gravação dos produtos, que contam com os seguintes campos: Id, nome do produto, a sua categoria, o preço e por fim, quantos itens há no estoque.</p>
+<p><img alt="" src="../L2.png" /></p></div>
             </div>
         </div>
 
